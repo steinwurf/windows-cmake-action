@@ -8,6 +8,7 @@ on:
         required: false
 env:
   EXTRA_RESOLVE_OPTIONS: ${{ github.event.inputs.extra_resolve_options }}
+  GIT_SSH_COMMAND: "${{ 'ssh -i /home/buildbot/.ssh/id_ed25519 -o IdentitiesOnly=yes' }}"
 jobs:
   windows_cmake:
     strategy:
@@ -22,8 +23,6 @@ jobs:
       - name: CMake Setup
         run: cmake -E make_directory ${{github.workspace}}/build
       - name: CMake Configure
-        env:
-          GIT_SSH_COMMAND: "${{ 'ssh -i /home/buildbot/.ssh/id_ed25519 -o IdentitiesOnly=yes' }}"
         working-directory: ${{github.workspace}}/build
         uses: nick-fields/retry@v2
         with:
