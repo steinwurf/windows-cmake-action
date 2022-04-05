@@ -8,6 +8,10 @@ Latest
 ------
 * tbd
 
+2.0.0
+-----
+* Major: Added a retry step at configure time.
+
 1.0.0
 -----
 * Major: Initital release.
