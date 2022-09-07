@@ -8,6 +8,10 @@ Latest
 ------
 * tbd
 
+3.0.0
+-----
+* Major: Add a max execution-time of 45 minutes
+
 2.0.0
 -----
 * Major: Added a retry step at configure time.
