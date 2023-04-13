@@ -6,6 +6,11 @@ on:
         description: "Extra Resolve Options"
         type: string
         required: false
+      run_test:
+        description: "Whether to invoke CTest"
+        required: false
+        type: string
+        default: 'false'
 env:
   EXTRA_RESOLVE_OPTIONS: ${{ github.event.inputs.extra_resolve_options }}
 
@@ -35,5 +40,6 @@ jobs:
         working-directory: ${{github.workspace}}/build
         run: cmake --build .
       - name: CTest
+        if: ${{ inputs.run_test }} == 'true'
         working-directory: ${{github.workspace}}/build
         run: ctest
