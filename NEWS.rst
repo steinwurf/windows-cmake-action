@@ -8,6 +8,10 @@ Latest
 ------
 * tbd
 
+4.1.0
+-----
+* Minor: Added optional parameter to specify if the tests should be run with
+         CTest
 4.0.0
 -----
 * Major: Upgraded actions/checkout to v3
